@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduSpace — Learn • Explore • Grow</title>
+  <link rel="icon" id="favicon" href="images/logo.png" type="image/png"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;700;800&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="EduSpace Logo" id="headerLogo" class="header-logo"/>
+        <span class="logo-text">Edu<span>Space</span></span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">მთავარი</a>
+        <a href="podcasts.html" class="nav-link">პოდკასტები</a>
+        <a href="articles.html" class="nav-link">სტატიები</a>
+        <a href="about.html" class="nav-link">ჩვენ შესახებ</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-cover" id="heroCover"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Learn • Explore • Grow</p>
+      <h1 class="hero-title">მიესალმებით<br/><span>EduSpace</span>-ში</h1>
+      <p class="hero-sub">პოდკასტები, სტატიები და ცოდნა — ყველაფერი ერთ სივრცეში.</p>
+      <div class="hero-actions">
+        <a href="podcasts.html" class="btn btn-primary">პოდკასტები</a>
+        <a href="articles.html" class="btn btn-outline">სტატიები</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- LATEST PODCASTS -->
+  <section class="section" id="latestPodcasts">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">უახლესი პოდკასტები</h2>
+        <a href="podcasts.html" class="see-all">ყველა →</a>
+      </div>
+      <div class="cards-grid" id="homePodcastGrid">
+        <div class="card-placeholder">იტვირთება...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST ARTICLES -->
+  <section class="section section-alt" id="latestArticles">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">უახლესი სტატიები</h2>
+        <a href="articles.html" class="see-all">ყველა →</a>
+      </div>
+      <div class="cards-grid" id="homeArticleGrid">
+        <div class="card-placeholder">იტვირთება...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="EduSpace" id="footerLogo"/>
+        <p>Learn • Explore • Grow</p>
+      </div>
+      <div class="footer-links">
+        <a href="podcasts.html">პოდკასტები</a>
+        <a href="articles.html">სტატიები</a>
+        <a href="about.html">ჩვენ შესახებ</a>
+        <a href="admin/index.html">ადმინი</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> EduSpace. ყველა უფლება დაცულია.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    renderHomeCards();
+  </script>
+</body>
+</html>

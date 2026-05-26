@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>სტატიები — EduSpace</title>
+  <link rel="icon" id="favicon" href="images/logo.png" type="image/png"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;700;800&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="EduSpace Logo" id="headerLogo" class="header-logo"/>
+        <span class="logo-text">Edu<span>Space</span></span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">მთავარი</a>
+        <a href="podcasts.html" class="nav-link">პოდკასტები</a>
+        <a href="articles.html" class="nav-link active">სტატიები</a>
+        <a href="about.html" class="nav-link">ჩვენ შესახებ</a>
+      </nav>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">სტატიები</h1>
+      <p class="page-hero-sub">ცოდნა და ინსპირაცია</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="articles-list" id="articlesGrid">
+        <div class="card-placeholder">იტვირთება...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Modal -->
+  <div class="modal-overlay" id="articleModal">
+    <div class="modal-box modal-article">
+      <button class="modal-close" id="articleModalClose">✕</button>
+      <div class="article-modal-content" id="articleModalContent"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="EduSpace" id="footerLogo"/>
+        <p>Learn • Explore • Grow</p>
+      </div>
+      <div class="footer-links">
+        <a href="podcasts.html">პოდკასტები</a>
+        <a href="articles.html">სტატიები</a>
+        <a href="about.html">ჩვენ შესახებ</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© <span id="year"></span> EduSpace.</p></div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    renderArticlesPage();
+  </script>
+</body>
+</html>
