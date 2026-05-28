@@ -1,102 +1,252 @@
 <!DOCTYPE html>
 <html lang="ka">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EduSpace — Learn • Explore • Grow</title>
-  <link rel="icon" id="favicon" href="images/logo.png" type="image/png"/>
-  <link rel="stylesheet" href="css/style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;700;800&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>EduSpace — Learn • Explore • Grow</title>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+<header class="site-header" id="sH">
+  <div class="header-inner">
+    <a href="index.html" class="logo-link">
+      <img class="dyn-logo header-logo" src="images/logo.png" alt="EduSpace" onerror="this.style.display='none'"/>
+      <span class="logo-text">Edu<span>Space</span></span>
+    </a>
+    <nav class="main-nav"><a href="index.html" class="nav-link active">მთავარი</a><a href="podcasts.html" class="nav-link">პოდკასტები</a><a href="articles.html" class="nav-link">სტატიები</a><a href="about.html" class="nav-link">ჩვენ შესახებ</a></nav>
+    <button class="hamburger" id="hbg" aria-label="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
 
-  <!-- HEADER -->
-  <header class="site-header" id="siteHeader">
-    <div class="header-inner">
-      <a href="index.html" class="logo-link">
-        <img src="images/logo.png" alt="EduSpace Logo" id="headerLogo" class="header-logo"/>
-        <span class="logo-text">Edu<span>Space</span></span>
-      </a>
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link active">მთავარი</a>
-        <a href="podcasts.html" class="nav-link">პოდკასტები</a>
-        <a href="articles.html" class="nav-link">სტატიები</a>
-        <a href="about.html" class="nav-link">ჩვენ შესახებ</a>
-      </nav>
-      <button class="hamburger" id="hamburger" aria-label="menu">
-        <span></span><span></span><span></span>
-      </button>
+<section class="hero" id="hero">
+  <div class="hero-cover" id="heroCover"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-tag">Learn &bull; Explore &bull; Grow</span>
+    <h1 class="hero-title">მიესალმებით<br/><span>EduSpace</span>-ში</h1>
+    <p class="hero-sub">პოდკასტები, სტატიები და ცოდნა &mdash; ყველაფერი ერთ სივრცეში.</p>
+    <div class="hero-actions">
+      <a href="podcasts.html" class="btn btn-primary">პოდკასტები</a>
+      <a href="articles.html" class="btn btn-outline">სტატიები</a>
     </div>
-  </header>
+  </div>
+  <div class="hero-scroll"><span></span></div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-cover" id="heroCover"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-tag">Learn • Explore • Grow</p>
-      <h1 class="hero-title">მიესალმებით<br/><span>EduSpace</span>-ში</h1>
-      <p class="hero-sub">პოდკასტები, სტატიები და ცოდნა — ყველაფერი ერთ სივრცეში.</p>
-      <div class="hero-actions">
-        <a href="podcasts.html" class="btn btn-primary">პოდკასტები</a>
-        <a href="articles.html" class="btn btn-outline">სტატიები</a>
-      </div>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">უახლესი პოდკასტები</h2>
+      <a href="podcasts.html" class="see-all">ყველა &rarr;</a>
     </div>
-    <div class="hero-scroll-hint">
-      <span></span>
-    </div>
-  </section>
+    <div class="cards-grid" id="homePods"><div class="placeholder">იტვირთება...</div></div>
+  </div>
+</section>
 
-  <!-- LATEST PODCASTS -->
-  <section class="section" id="latestPodcasts">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">უახლესი პოდკასტები</h2>
-        <a href="podcasts.html" class="see-all">ყველა →</a>
-      </div>
-      <div class="cards-grid" id="homePodcastGrid">
-        <div class="card-placeholder">იტვირთება...</div>
-      </div>
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">უახლესი სტატიები</h2>
+      <a href="articles.html" class="see-all">ყველა &rarr;</a>
     </div>
-  </section>
+    <div class="cards-grid" id="homeArts"><div class="placeholder">იტვირთება...</div></div>
+  </div>
+</section>
 
-  <!-- LATEST ARTICLES -->
-  <section class="section section-alt" id="latestArticles">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">უახლესი სტატიები</h2>
-        <a href="articles.html" class="see-all">ყველა →</a>
-      </div>
-      <div class="cards-grid" id="homeArticleGrid">
-        <div class="card-placeholder">იტვირთება...</div>
-      </div>
-    </div>
-  </section>
+<div class="modal-overlay" id="vModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeVid()">&#x2715;</button>
+    <div class="video-wrap" id="vWrap"></div>
+    <div class="modal-info" id="vInfo"></div>
+  </div>
+</div>
+<div class="modal-overlay" id="aModal">
+  <div class="modal-box modal-art">
+    <button class="modal-close" onclick="closeArt()">&#x2715;</button>
+    <div class="art-modal-body" id="aContent"></div>
+  </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-logo">
-        <img src="images/logo.png" alt="EduSpace" id="footerLogo"/>
-        <p>Learn • Explore • Grow</p>
-      </div>
-      <div class="footer-links">
-        <a href="podcasts.html">პოდკასტები</a>
-        <a href="articles.html">სტატიები</a>
-        <a href="about.html">ჩვენ შესახებ</a>
-        <a href="admin/index.html">ადმინი</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© <span id="year"></span> EduSpace. ყველა უფლება დაცულია.</p>
-    </div>
-  </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var pods = DB.getPodcasts().slice(0,3);
+  var arts = DB.getArticles().slice(0,3);
+  var pg = document.getElementById('homePods');
+  var ag = document.getElementById('homeArts');
+  if(pods.length){ pg.innerHTML = pods.map(podCardHTML).join(''); bindCards(pg, openVid); }
+  else pg.innerHTML = '<div class="placeholder">პოდკასტები ჯერ არ დამატებულა</div>';
+  if(arts.length){ ag.innerHTML = arts.map(homeArtHTML).join(''); bindCards(ag, openArt); }
+  else ag.innerHTML = '<div class="placeholder">სტატიები ჯერ არ დამატებულა</div>';
+  document.getElementById('vModal').addEventListener('click', function(e){ if(e.target.id==='vModal')closeVid(); });
+  document.getElementById('aModal').addEventListener('click', function(e){ if(e.target.id==='aModal')closeArt(); });
+});
+</script>
 
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    renderHomeCards();
-  </script>
+<footer class="site-footer">
+<div class="container footer-inner">
+  <div class="footer-logo">
+    <img class="dyn-logo" src="images/logo.png" alt="EduSpace" onerror="this.style.display='none'"/>
+    <p>Learn &bull; Explore &bull; Grow</p>
+  </div>
+  <div class="footer-links">
+    <a href="podcasts.html">პოდკასტები</a>
+    <a href="articles.html">სტატიები</a>
+    <a href="about.html">ჩვენ შესახებ</a>
+    <a href="admin/index.html">ადმინი</a>
+  </div>
+</div>
+<div class="footer-bottom"><p>&copy; <span id="yr"></span> EduSpace. ყველა უფლება დაცულია.</p></div>
+</footer>
+<script>
+
+const DB={
+  get(k){try{return JSON.parse(localStorage.getItem('es_'+k))||[]}catch{return[]}},
+  set(k,v){localStorage.setItem('es_'+k,JSON.stringify(v))},
+  getOne(k){try{return JSON.parse(localStorage.getItem('es_'+k))||null}catch{return null}},
+  setOne(k,v){localStorage.setItem('es_'+k,JSON.stringify(v))},
+  getPodcasts(){return this.get('pods')},
+  savePodcasts(d){this.set('pods',d)},
+  addPodcast(p){const l=this.getPodcasts();p.id=Date.now().toString();p.date=new Date().toISOString();l.unshift(p);this.savePodcasts(l);return p},
+  deletePodcast(id){this.savePodcasts(this.getPodcasts().filter(p=>p.id!==id))},
+  updatePodcast(id,d){this.savePodcasts(this.getPodcasts().map(p=>p.id===id?Object.assign({},p,d):p))},
+  getArticles(){return this.get('arts')},
+  saveArticles(d){this.set('arts',d)},
+  addArticle(a){const l=this.getArticles();a.id=Date.now().toString();a.date=new Date().toISOString();l.unshift(a);this.saveArticles(l);return a},
+  deleteArticle(id){this.saveArticles(this.getArticles().filter(a=>a.id!==id))},
+  updateArticle(id,d){this.saveArticles(this.getArticles().map(a=>a.id===id?Object.assign({},a,d):a))},
+  getSettings(){return this.getOne('cfg')||{siteName:'EduSpace',tagline:'Learn \u2022 Explore \u2022 Grow',logoUrl:'',coverUrl:'',aboutText:'EduSpace \u10d0\u10e0\u10d8\u10e1 \u10e1\u10d0\u10d2\u10d0\u10dc\u10db\u10d0\u10dc\u10d0\u10d7\u10da\u10d4\u10d1\u10da\u10dd \u10de\u10da\u10d0\u10e2\u10e4\u10dd\u10e0\u10db\u10d0.'}},
+  saveSettings(d){this.setOne('cfg',d)}
+};
+
+function ytId(u){
+  if(!u)return null;
+  var m=u.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/shorts\/)([^&\n?#]+)/);
+  return m?m[1]:null;
+}
+function ytThumb(id){return'https://img.youtube.com/vi/'+id+'/hqdefault.jpg'}
+function ytEmbed(id){return'https://www.youtube.com/embed/'+id+'?autoplay=1'}
+function fmtDate(iso){
+  if(!iso)return'';
+  var d=new Date(iso);
+  return d.toLocaleDateString('ka-GE',{year:'numeric',month:'long',day:'numeric'});
+}
+function fileToB64(f){
+  return new Promise(function(res,rej){
+    var r=new FileReader();
+    r.onload=function(){res(r.result)};
+    r.onerror=rej;
+    r.readAsDataURL(f);
+  });
+}
+function esc(s){
+  if(!s)return'';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function applyCfg(){
+  var s=DB.getSettings();
+  document.querySelectorAll('.dyn-logo').forEach(function(el){if(s.logoUrl)el.src=s.logoUrl});
+  var hc=document.getElementById('heroCover');
+  if(hc&&s.coverUrl)hc.style.backgroundImage="url('"+s.coverUrl+"')";
+  var at=document.getElementById('aboutText');
+  if(at&&s.aboutText){
+    at.innerHTML=s.aboutText.split('\n').map(function(l){return l.trim()?'<p>'+esc(l)+'</p>':''}).join('');
+  }
+}
+window.addEventListener('DOMContentLoaded',function(){
+  applyCfg();
+  var btn=document.getElementById('hbg');
+  var nav=document.querySelector('.main-nav');
+  if(btn&&nav){
+    btn.addEventListener('click',function(){nav.classList.toggle('open')});
+    document.addEventListener('click',function(e){
+      if(!btn.contains(e.target)&&!nav.contains(e.target))nav.classList.remove('open');
+    });
+  }
+  window.addEventListener('scroll',function(){
+    var h=document.getElementById('sH');
+    if(h)h.classList.toggle('scrolled',scrollY>20);
+  });
+  var yr=document.getElementById('yr');
+  if(yr)yr.textContent=new Date().getFullYear();
+});
+
+function podCardHTML(p){
+  var id=ytId(p.url||'');
+  var th=id?ytThumb(id):'';
+  var inner=th?'<img src="'+th+'" alt="'+esc(p.title)+'" loading="lazy"/>':'<div style="width:100%;height:100%;background:linear-gradient(135deg,#0e1a3a,#1a0e3a)"></div>';
+  return '<div class="podcast-card" data-pod="'+esc(JSON.stringify(p))+'">'+
+    '<div class="podcast-thumb">'+inner+'<div class="play-btn"><div class="play-icon">&#9654;</div></div></div>'+
+    '<div class="podcast-info"><div class="podcast-title">'+esc(p.title)+'</div>'+
+    (p.description?'<div class="podcast-desc">'+esc(p.description)+'</div>':'')+
+    '<div class="podcast-date">'+fmtDate(p.date)+'</div></div></div>';
+}
+function homeArtHTML(a){
+  var img=a.imageUrl?'<img class="home-art-cover" src="'+a.imageUrl+'" alt="'+esc(a.title)+'" loading="lazy"/>':'<div class="home-art-cover-ph">\ud83d\udcc4</div>';
+  return '<div class="home-art-card" data-art="'+esc(JSON.stringify(a))+'">'+img+
+    '<div class="home-art-info"><div class="art-title">'+esc(a.title)+'</div>'+
+    '<div class="art-excerpt">'+esc(a.excerpt||(a.content||'').substring(0,120))+'</div>'+
+    '<div class="art-meta"><span>'+fmtDate(a.date)+'</span>'+(a.tag?'<span class="art-tag">'+esc(a.tag)+'</span>':'')+
+    '</div></div></div>';
+}
+function artCardHTML(a){
+  var img=a.imageUrl?'<img class="art-cover" src="'+a.imageUrl+'" alt="'+esc(a.title)+'" loading="lazy"/>':'<div class="art-cover-ph">\ud83d\udcc4</div>';
+  return '<div class="article-card" data-art="'+esc(JSON.stringify(a))+'">'+img+
+    '<div class="art-body"><div class="art-title">'+esc(a.title)+'</div>'+
+    '<div class="art-excerpt">'+esc(a.excerpt||(a.content||'').substring(0,200))+'</div>'+
+    '<div class="art-meta"><span>'+fmtDate(a.date)+'</span>'+(a.tag?'<span class="art-tag">'+esc(a.tag)+'</span>':'')+
+    '</div></div></div>';
+}
+
+function bindCards(container,openFn){
+  container.querySelectorAll('[data-pod]').forEach(function(el){
+    el.addEventListener('click',function(){openFn(JSON.parse(el.getAttribute('data-pod')))});
+  });
+  container.querySelectorAll('[data-art]').forEach(function(el){
+    el.addEventListener('click',function(){openFn(JSON.parse(el.getAttribute('data-art')))});
+  });
+}
+
+function openVid(p){
+  var m=document.getElementById('vModal');
+  var w=document.getElementById('vWrap');
+  var inf=document.getElementById('vInfo');
+  if(!m)return;
+  var id=ytId(p.url||'');
+  if(id){
+    w.innerHTML='<iframe src="'+ytEmbed(id)+'" allow="autoplay;encrypted-media" allowfullscreen></iframe>';
+  }else{
+    w.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#546080;padding:40px">YouTube \u10da\u10d8\u10dc\u10d9\u10d8 \u10d5\u10d4\u10e0 \u10db\u10dd\u10d8\u10eb\u10d4\u10d1\u10dc\u10d0</div>';
+  }
+  inf.innerHTML='<h3>'+esc(p.title)+'</h3>'+(p.description?'<p>'+esc(p.description)+'</p>':'');
+  m.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeVid(){
+  var m=document.getElementById('vModal');
+  var w=document.getElementById('vWrap');
+  if(m)m.classList.remove('open');
+  if(w)w.innerHTML='';
+  document.body.style.overflow='';
+}
+function openArt(a){
+  var m=document.getElementById('aModal');
+  var c=document.getElementById('aContent');
+  if(!m)return;
+  var img=a.imageUrl?'<img src="'+a.imageUrl+'" alt="'+esc(a.title)+'"/>':'';
+  var paras=(a.content||'').split('\n').map(function(l){return l.trim()?'<p>'+esc(l)+'</p>':''}).join('');
+  c.innerHTML=img+'<h2>'+esc(a.title)+'</h2>'+
+    '<div class="art-modal-meta">'+fmtDate(a.date)+(a.tag?' \u00b7 '+esc(a.tag):'')+
+    '</div><div>'+paras+'</div>';
+  m.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeArt(){
+  var m=document.getElementById('aModal');
+  if(m)m.classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeVid();closeArt()}});
+
+</script>
 </body>
 </html>
